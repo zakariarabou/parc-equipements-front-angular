@@ -1,7 +1,10 @@
-
-<div *ngIf="isLoggedIn" >
-  <router-outlet></router-outlet>
+<div *ngIf="!authority; else loggedOut">
+  <app-auth-layout></app-auth-layout>
 </div>
+
+<ng-template #loggedOut>
+    <app-admin-layout></app-admin-layout>
+</ng-template>
 
 
 
